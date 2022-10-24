@@ -12,21 +12,21 @@ const shuffleIcon = <FontAwesomeIcon className='icon' icon={faShuffle} />
 function CardComponent(props){
 
     const [counter, setCounter] = useState(0);
-    const [content, setContent] = useState(props.words[counter].eng);
+    const [content, setContent] = useState(props.words.words[counter].eng);
     const [check, setCheck] = useState(true);
 
     const shuffleArray = () => {
-        for (let i = props.words.length - 1; i > 0; i--) {
+        for (let i = props.words.words.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          const temp = props.words[i];
-          props.words[i] = props.words[j];
-          props.words[j] = temp;
+          const temp = props.words.words[i];
+          props.words.words[i] = props.words.words[j];
+          props.words.words[j] = temp;
         }
-        console.log(props.words);
+        console.log(props.words.words);
         if (check === true) {
-            setContent(props.words[counter].eng);
+            setContent(props.words.words[counter].eng);
         } else {
-            setContent(props.words[counter].ukr);
+            setContent(props.words.words[counter].ukr);
         }
     };
 
@@ -46,40 +46,40 @@ function CardComponent(props){
             minus = counter-1;
             setCounter(minus);
             if (check === true) {
-                setContent(props.words[minus].eng);
+                setContent(props.words.words[minus].eng);
             } else {
-                setContent(props.words[minus].ukr);
+                setContent(props.words.words[minus].ukr);
             }
         } else {
-            minus = props.words.length-1;
+            minus = props.words.words.length-1;
             setCounter(minus);
             if (check === true) {
-                setContent(props.words[minus].eng);
+                setContent(props.words.words[minus].eng);
             } else {
-                setContent(props.words[minus].ukr);
+                setContent(props.words.words[minus].ukr);
             }
         }
     };
 
     const plusHandler = () => {
         let plus;
-        if(counter < props.words.length-1){
+        if(counter < props.words.words.length-1){
             plus = counter+1;
             setCounter(plus);
             console.log(plus);
             console.log(check);
             if (check === true) {
-                setContent(props.words[plus].eng);
+                setContent(props.words.words[plus].eng);
             } else {
-                setContent(props.words[plus].ukr);
+                setContent(props.words.words[plus].ukr);
             }
         } else {
             plus = 0;
             setCounter(plus);
             if (check === true) {
-                setContent(props.words[plus].eng);
+                setContent(props.words.words[plus].eng);
             } else {
-                setContent(props.words[plus].ukr);
+                setContent(props.words.words[plus].ukr);
             }
         }
     };
@@ -103,9 +103,9 @@ function CardComponent(props){
     return (
         <div className='parent'>
             <div>
-                <h2 className={'lesson'+props.words[props.words.length-1] + ' lesson-next'} onClick={() => lessonsBar(props.words[props.words.length-1])}>Lesson {props.words[props.words.length-1]}</h2>
+                <h2 className={'lesson'+props.words.lesson + ' lesson-next'} onClick={() => lessonsBar(props.words.lesson)}>Lesson {props.words.lesson}</h2>
             </div>
-            <div className='center-card child hidden' id={props.words[props.words.length-1]}>
+            <div className='center-card child hidden' id={props.words.lesson}>
                 <Row xs='12' className='justify-content-center text-center'>
                     <Col md='2'></Col>
                     <Col md='1' xs='2' className='my-auto'><div className='arrow' onClick={minusHandler}>{arrowLeft}</div></Col>
@@ -125,29 +125,6 @@ function CardComponent(props){
                     <Col md='5' xs='4'></Col>
                 </Row>
             </div>
-            {/* <div>
-                <h2 className='lesson-next' onClick={() => lessonsBar('myCard2')}>Lesson 2</h2>
-            </div>
-            <div className='center-card child hidden' id='myCard2'>
-                <Row xs='12' className='justify-content-center text-center'>
-                    <Col md='2'></Col>
-                    <Col md='1' xs='2' className='my-auto'><div className='arrow' onClick={minusHandler}>{arrowLeft}</div></Col>
-                    <Col md='6' xs='6' className='align-items-center'>
-                        <Card className='my-card' onClick={clickHandler}>
-                            <CardBody className='card-body'>
-                                <CardTitle tag='h2' className='card-content'>{content}</CardTitle>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md='1' xs='2' className='align-items-center my-auto'><div className='arrow' onClick={plusHandler}>{arrowRight}</div></Col>
-                    <Col md='2'></Col>
-                </Row>
-                <Row>
-                    <Col md='5' xs='4'></Col>
-                    <Col md='2' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle sort-button' onClick={shuffleArray}>{shuffleIcon}</div></Col>
-                    <Col md='5' xs='4'></Col>
-                </Row>
-            </div> */}
         </div>
     );
 }
