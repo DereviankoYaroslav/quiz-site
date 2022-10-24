@@ -87,9 +87,9 @@ function CardComponent(props){
     const clickHandler = () => {
         setCheck(!check);
         if (check === false) {
-            setContent(props.words[counter].eng);
+            setContent(props.words.words[counter].eng);
         } else {
-            setContent(props.words[counter].ukr);
+            setContent(props.words.words[counter].ukr);
         }
     };
 
