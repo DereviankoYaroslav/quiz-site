@@ -103,7 +103,7 @@ function CardComponent(props){
     return (
         <div className='parent'>
             <div>
-                <h2 className={'lesson'+props.words.lesson + ' lesson-next'} onClick={() => lessonsBar(props.words.lesson)}>Lesson {props.words.lesson}</h2>
+                <h2 className={'lesson'+props.words.lesson + ' lesson-next'} onClick={() => lessonsBar(props.words.lesson)}><span className='toggler'>Lesson {props.words.lesson}</span></h2>
             </div>
             <div className='center-card child hidden' id={props.words.lesson}>
                 <Row xs='12' className='justify-content-center text-center'>

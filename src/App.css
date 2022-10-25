@@ -182,6 +182,10 @@ body {
   padding-top: 20px;
 }
 
+.toggler:hover {
+  cursor: pointer;
+}
+
 /* .lesson-next:hover{
   cursor: pointer;
 } */
@@ -193,6 +197,40 @@ body {
 .cards-in-lessons {
   min-height: 100vh;
   padding-bottom: 50px;
+}
+
+/* Images  */
+
+.card-img-body{
+  width: 100%;
+  margin-top: 10%;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.question {
+  margin-top: 25px;
+  font-size: 50px;
+}
+
+.bottom-line {
+  margin-top: 200px;
+}
+
+.variant {
+  background-color: #132a58c6;
+  border-radius: 10px;
+  width: auto;
+  height: 50px;
+  display: block;
+  justify-content: center;
+  padding-top: 10px;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+#congrats-weather {
+  margin-top: 25px;
 }
 
 
