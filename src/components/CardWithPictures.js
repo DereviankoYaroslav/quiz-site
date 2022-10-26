@@ -117,11 +117,14 @@ function CardWithPictures(props){
             e.target.style.color = 'green';
             congrats.innerHTML = 'Correct!';
             congrats.style.color = 'green';
+            congrats.style.fontSize = '40px';
+            congrats.style.fontWeight = 'bold';
         } 
         else{
             e.target.style.color = 'red';
             congrats.innerHTML = 'Try Another';
             congrats.style.color = 'red';
+            congrats.style.fontSize = '35px';
         }
     };
 
@@ -183,8 +186,8 @@ function CardWithPictures(props){
                     <Col md='4' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle variant' onClick={colorChanger}>{vars[3]}</div></Col>
                     <Col md='2' xs='2'></Col>
                 </Row>
-                <div>
-                    <h2 id={'congrats-' + props.words.topic.toLowerCase()}></h2>
+                <div className='congrats'>
+                    <p id={'congrats-' + props.words.topic.toLowerCase()}></p>
                 </div>
                 <hr className='bottom-line'/>
             </div>

@@ -44,7 +44,7 @@ body {
 }
 
 
-/* Card Component */
+/* ---- Card Component ---- */
 
 .my-auto{
   margin-top: auto;
@@ -91,7 +91,9 @@ body {
   color: aliceblue;
 }
 
-/* NAV */
+/* -------- */
+
+/* ---- Navigation ---- */
 
 .dropdown-menu {
   background-color: #414245fc;
@@ -135,6 +137,31 @@ a.dropdown-item:hover {
   text-decoration: none !important;
 }
 
+/* --------- */
+
+/* ---- Arrows/Buttons ---- */
+
+.sort-button {
+  background-color: #ffffffc6;
+  border-radius: 20px;
+  width: 60%;
+  display: block;
+  justify-content: center;
+}
+
+.sort-button:hover {
+  cursor: pointer;
+}
+
+.shuffle {
+  margin: auto;
+  margin-top: 20px;
+}
+
+.toggler:hover {
+  cursor: pointer;
+}
+
 .arrow {
   background-color: #ffffffc6;
   border-radius: 20px;
@@ -154,10 +181,9 @@ a.dropdown-item:hover {
   width: 100%;
 }
 
-/* Homepage Component */
-.welcome-page{
-  height: 100vh;
-}
+/* -------- */
+
+/* ---- Footer ---- */
 
 .footer {
   display: flex;
@@ -176,25 +202,17 @@ a.dropdown-item:hover {
     width: 100%;
 }
 
+/* -------- */
+
+/* ---- Pages Content ---- */
+
+.welcome-page{
+  height: 100vh;
+}
+
+
 .content {
   margin-top: 25px;
-}
-
-.sort-button {
-  background-color: #ffffffc6;
-  border-radius: 20px;
-  width: 60%;
-  display: block;
-  justify-content: center;
-}
-
-.sort-button:hover {
-  cursor: pointer;
-}
-
-.shuffle {
-  margin: auto;
-  margin-top: 20px;
 }
 
 /* .lesson1 {
@@ -203,10 +221,6 @@ a.dropdown-item:hover {
 
 .lesson-next {
   padding-top: 20px;
-}
-
-.toggler:hover {
-  cursor: pointer;
 }
 
 /* .lesson-next:hover{
@@ -222,7 +236,13 @@ a.dropdown-item:hover {
   padding-bottom: 50px;
 }
 
-/* Images  */
+.bottom-line {
+  margin-top: 200px;
+}
+
+/* -------- */
+
+/* ---- Images Cards ----  */
 
 .card-img-body{
   width: 100%;
@@ -231,13 +251,11 @@ a.dropdown-item:hover {
   margin-bottom: 10%;
 }
 
+/* ---- Tests Cards Content ---- */
+
 .question {
   margin-top: 25px;
   font-size: 50px;
-}
-
-.bottom-line {
-  margin-top: 200px;
 }
 
 .variant {
@@ -252,8 +270,10 @@ a.dropdown-item:hover {
   font-size: 20px;
 }
 
-#congrats-weather {
+.congrats {
   margin-top: 25px;
 }
+
+/* -------- */
 
 
