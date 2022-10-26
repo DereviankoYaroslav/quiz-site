@@ -2,6 +2,8 @@ import CardComponent from "./CardComponent";
 
 function LessonsComponent(){
 
+  document.body.style.backgroundImage = 'none';
+
     const wordsToLearn1 = {
         words: [
         {eng: 'Humidity',

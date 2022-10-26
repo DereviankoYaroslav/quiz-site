@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Homepage from './components/Homepage';
 import LessonsComponent from './components/LessonsComponent';
 import PictureTestComponent from './components/PicturesTestComponent';
+import HalloweenComponent from './components/HalloweenComponent';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 
@@ -23,6 +24,7 @@ function App() {
               <NavDropdown.Item><Link to='/' className='nav-item'>Homepage</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to='/learning-cards' className='nav-item'>Learning Cards</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to='/pictures-tests' className='nav-item'>Tests with Pictures</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/halloween' className='nav-item'>Halloween</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -37,6 +39,7 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/learning-cards' element={<LessonsComponent />} />
         <Route path='/pictures-tests' element={<PictureTestComponent />} />
+        <Route path='/halloween' element={<HalloweenComponent />} />
       </Routes>
       </div>
       <nav className='footer'>

@@ -26,7 +26,7 @@ function CardWithPictures(props){
           props.words.answears[j] = temp2;
         }
         let whitening = document.getElementsByClassName('variant');
-        let id = 'congrats-' + props.words.topic.toLowerCase();
+        let id = 'congrats-' + props.words.topic.toLowerCase().split(' ').join('-');
         let congrats = document.getElementById(id);
         congrats.innerHTML = '';
         for (let i = 0; i < whitening.length; i++){
@@ -49,7 +49,7 @@ function CardWithPictures(props){
     const minusHandler = () => {
         let minus;
         let whitening = document.getElementsByClassName('variant');
-        let id = 'congrats-' + props.words.topic.toLowerCase();
+        let id = 'congrats-' + props.words.topic.toLowerCase().split(' ').join('-');
         let congrats = document.getElementById(id);
         congrats.innerHTML = '';
         for (let i = 0; i < whitening.length; i++){
@@ -70,7 +70,7 @@ function CardWithPictures(props){
     const plusHandler = () => {
         let plus;
         let whitening = document.getElementsByClassName('variant');
-        let id = 'congrats-' + props.words.topic.toLowerCase();
+        let id = 'congrats-' + props.words.topic.toLowerCase().split(' ').join('-');
         let congrats = document.getElementById(id);
         congrats.innerHTML = '';
         for (let i = 0; i < whitening.length; i++){
@@ -107,7 +107,7 @@ function CardWithPictures(props){
     };
     
     const colorChanger = (e) => {
-        let id = 'congrats-' + props.words.topic.toLowerCase();
+        let id = 'congrats-' + props.words.topic.toLowerCase().split(' ').join('-');
         let congrats = document.getElementById(id);
         let whitening = document.getElementsByClassName('variant');
         for (let i = 0; i < whitening.length; i++){
@@ -115,14 +115,14 @@ function CardWithPictures(props){
         }
         if(e.target.innerHTML === props.words.answears[counter]){
             e.target.style.color = 'green';
-            congrats.innerHTML = 'Correct!';
+            congrats.innerHTML = `<span class='${props.words.topic.toLowerCase().split(' ').join('-')}'>Correct!</span>`;
             congrats.style.color = 'green';
             congrats.style.fontSize = '40px';
             congrats.style.fontWeight = 'bold';
         } 
         else{
             e.target.style.color = 'red';
-            congrats.innerHTML = 'Try Another';
+            congrats.innerHTML = `<span class='${props.words.topic.toLowerCase().split(' ').join('-')}'>Try Another</span>`;
             congrats.style.color = 'red';
             congrats.style.fontSize = '35px';
         }
@@ -148,9 +148,9 @@ function CardWithPictures(props){
     return (
         <div className='parent'>
             <div>
-                <h2 className={'lesson'+props.counter + ' lesson-next'} onClick={() => lessonsBar(props.words.topic.toLowerCase())}><span className='toggler'>{props.words.topic}</span></h2>
+                <h2 className={'lesson'+props.counter + ' lesson-next'} onClick={() => lessonsBar(props.words.topic.toLowerCase().split(' ').join('-'))}><span className='toggler'>{props.words.topic}</span></h2>
             </div>
-            <div className='center-card child hidden' id={props.words.topic.toLowerCase()}>
+            <div className='center-card child hidden' id={props.words.topic.toLowerCase().split(' ').join('-')}>
                 <Row xs='12' className='justify-content-center text-center'>
                     <Col md='2'></Col>
                     {/* <Col md='1' xs='2' className='my-auto'><div className='arrow' onClick={minusHandler}>{arrowLeft}</div></Col> */}
@@ -187,7 +187,7 @@ function CardWithPictures(props){
                     <Col md='2' xs='2'></Col>
                 </Row>
                 <div className='congrats'>
-                    <p id={'congrats-' + props.words.topic.toLowerCase()}></p>
+                    <p id={'congrats-' + props.words.topic.toLowerCase().split(' ').join('-')}></p>
                 </div>
                 <hr className='bottom-line'/>
             </div>
