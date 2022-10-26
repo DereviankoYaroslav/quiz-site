@@ -150,7 +150,7 @@ function CardWithPictures(props){
             <div className='center-card child hidden' id={props.words.topic.toLowerCase()}>
                 <Row xs='12' className='justify-content-center text-center'>
                     <Col md='2'></Col>
-                    <Col md='1' xs='2' className='my-auto'><div className='arrow' onClick={minusHandler}>{arrowLeft}</div></Col>
+                    {/* <Col md='1' xs='2' className='my-auto'><div className='arrow' onClick={minusHandler}>{arrowLeft}</div></Col> */}
                     <Col md='6' xs='6' className='align-items-center'>
                         <Card className='my-card'>
                             <CardBody className='card-img-body'>
@@ -158,13 +158,15 @@ function CardWithPictures(props){
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col md='1' xs='2' className='align-items-center my-auto'><div className='arrow' onClick={plusHandler}>{arrowRight}</div></Col>
+                    {/*  <Col md='1' xs='2' className='align-items-center my-auto'><div className='arrow' onClick={plusHandler}>{arrowRight}</div></Col> */}
                     <Col md='2'></Col>
                 </Row>
                 <Row>
-                    <Col md='5' xs='4'></Col>
+                    <Col md='4' xs='2'></Col>
+                    <Col md='1' xs='2'><div className='arrow shuffle' onClick={minusHandler}>{arrowLeft}</div></Col>
                     <Col md='2' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle sort-button' onClick={shuffleArray}>{shuffleIcon}</div></Col>
-                    <Col md='5' xs='4'></Col>
+                    <Col md='1' xs='2'><div className='arrow shuffle' onClick={plusHandler}>{arrowRight}</div></Col>
+                    <Col md='4' xs='2'></Col>
                 </Row>
                 <div>
                     <h2 className='question'>{props.words.question}</h2>
