@@ -24,7 +24,12 @@ function PictureTestComponent(){
         'Rainy', 
         'Foggy', 
         'Sunny', 
-        'Cloudy'
+        'Cloudy',
+        'Bad',
+        'Good',
+        'Snow',
+        'Cold',
+        'Hot'
     ];
 
     const wordsToLearn2 = {

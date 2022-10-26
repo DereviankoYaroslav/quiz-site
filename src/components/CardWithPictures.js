@@ -13,6 +13,7 @@ function CardWithPictures(props){
 
     const [counter, setCounter] = useState(0);
     const [content, setContent] = useState(props.words.imgs[counter]);
+    const [vars, setVars] = useState([]);
 
     const shuffleArray = () => {
         for (let i = props.words.imgs.length - 1; i > 0; i--) {
@@ -32,6 +33,7 @@ function CardWithPictures(props){
             whitening[i].style.color = 'aliceblue';
         }
         setContent(props.words.imgs[counter]);
+        variantsShuffle(counter);
     };
 
     /* function shuffle() {
@@ -62,6 +64,7 @@ function CardWithPictures(props){
             setCounter(minus);
             setContent(props.words.imgs[minus]);
         }
+        variantsShuffle(minus);
     };
 
     const plusHandler = () => {
@@ -83,6 +86,7 @@ function CardWithPictures(props){
             setCounter(plus);
             setContent(props.words.imgs[plus]);
         }
+        variantsShuffle(plus);
     };
 
 /*     const clickHandler = () => {
@@ -99,6 +103,7 @@ function CardWithPictures(props){
         let myEl = document.getElementById(id);
         myEl.classList.toggle('hidden');
         console.log(myEl);
+        variantsShuffle(counter);
     };
     
     const colorChanger = (e) => {
@@ -118,6 +123,23 @@ function CardWithPictures(props){
             congrats.innerHTML = 'Try Another';
             congrats.style.color = 'red';
         }
+    };
+
+    const variantsShuffle = (counter) => {
+        let varsInTest = [];
+        varsInTest.push(props.words.answears[counter]);
+        let mySet;
+        do{
+            let variant = props.variants[Math.floor(Math.random()*props.variants.length)];
+            varsInTest.push(variant);
+            mySet = new Set(varsInTest);
+            console.log(mySet);
+        }
+        while(mySet.size < 4);
+        console.log(mySet);
+        let arr = [...mySet];
+        arr.sort((a, b) => 0.5 - Math.random());
+        setVars(arr);
     };
 
     return (
@@ -149,14 +171,14 @@ function CardWithPictures(props){
                 </div>
                 <Row>
                     <Col md='2' xs='2'></Col>
-                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center my-auto'><div className='shuffle variant' onClick={colorChanger}>{props.variants[0]}</div></Col>
-                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle variant' onClick={colorChanger}>{props.variants[1]}</div></Col>
+                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center my-auto'><div className='shuffle variant' onClick={colorChanger}>{vars[0]}</div></Col>
+                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle variant' onClick={colorChanger}>{vars[1]}</div></Col>
                     <Col md='2' xs='2'></Col>
                 </Row>
                 <Row>
                     <Col md='2' xs='2'></Col>
-                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center my-auto'><div className='shuffle variant' onClick={colorChanger}>{props.variants[2]}</div></Col>
-                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle variant' onClick={colorChanger}>{props.variants[3]}</div></Col>
+                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center my-auto'><div className='shuffle variant' onClick={colorChanger}>{vars[2]}</div></Col>
+                    <Col md='4' xs='4' className='align-items-center justify-content-center text-center'><div className='shuffle variant' onClick={colorChanger}>{vars[3]}</div></Col>
                     <Col md='2' xs='2'></Col>
                 </Row>
                 <div>
